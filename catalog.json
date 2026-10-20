@@ -1,0 +1,54 @@
+[
+  {
+    "id": "sintel",
+    "title": "Sintel",
+    "year": 2010,
+    "genre": "Fantasy",
+    "duration": 15,
+    "description": "A chance encounter. An unlikely friendship. Follow a young traveler into a breathtaking world in search of a dragon she once called her own. Directed by Colin Levy, this open animated short is a story of courage, loss, and the bonds that stay with us.",
+    "image": "/assets/sintel-poster.jpg",
+    "video_url": "https://archive.org/download/Sintel/sintel-2048-stereo_512kb.mp4",
+    "credit": "© 2010 Blender Foundation · durian.blender.org",
+    "source": "https://durian.blender.org/",
+    "license": "Creative Commons Attribution 3.0"
+  },
+  {
+    "id": "big-buck-bunny",
+    "title": "Big Buck Bunny",
+    "year": 2008,
+    "genre": "Animation",
+    "duration": 10,
+    "description": "A gentle giant finds that even the most beautiful day can be interrupted by three mischievous woodland creatures. A playful, colorful animated short directed by Sacha Goedegebure.",
+    "image": "/assets/bunny.png",
+    "video_url": "https://media.w3.org/2010/05/bunny/movie.mp4",
+    "credit": "© 2008 Blender Foundation · www.bigbuckbunny.org",
+    "source": "https://peach.blender.org/about/",
+    "license": "Creative Commons Attribution 3.0"
+  },
+  {
+    "id": "tears-of-steel",
+    "title": "Tears of Steel",
+    "year": 2012,
+    "genre": "Sci-Fi",
+    "duration": 12,
+    "description": "In a future Amsterdam, a group of scientists and soldiers recreates a moment from the past in a last attempt to stop a robot uprising. A science-fiction short combining live action and visual effects, directed by Ian Hubert.",
+    "image": "/assets/tears.jpg",
+    "video_url": "https://archive.org/download/Tears-of-Steel/tears_of_steel_720p.mp4",
+    "credit": "© 2012 Blender Foundation · mango.blender.org",
+    "source": "https://mango.blender.org/about/",
+    "license": "Creative Commons Attribution 3.0"
+  },
+  {
+    "id": "elephants-dream",
+    "title": "Elephants Dream",
+    "year": 2006,
+    "genre": "Sci-Fi",
+    "duration": 11,
+    "description": "Two travelers explore a strange mechanical world, each seeing something very different in its winding corridors. Directed by Bassam Kurdali, Blender’s first open movie is a surreal journey through imagination and obsession.",
+    "image": "/assets/elephants.jpg",
+    "video_url": "https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4",
+    "credit": "© 2006 Blender Foundation / Netherlands Media Art Institute · orange.blender.org",
+    "source": "https://orange.blender.org/",
+    "license": "Creative Commons Attribution 2.5"
+  }
+]

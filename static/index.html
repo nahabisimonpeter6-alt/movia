@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0e12">
+  <meta name="description" content="Your own little cinema. Discover open films, build your watchlist, and make room for movie night with Movia.">
+  <title>Movia — Your own little cinema</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to films</a>
+  <aside class="sidebar">
+    <a href="#discover" class="brand" aria-label="Movia home"><span class="brand-mark">m<span></span></span>movia<span class="brand-dot">.</span></a>
+    <div class="nav-label">YOUR CINEMA</div>
+    <nav aria-label="Main navigation">
+      <button class="nav-item active" data-page="discover"><span data-icon="compass"></span>Discover</button>
+      <button class="nav-item" data-page="movies"><span data-icon="film"></span>All films<span id="film-count" class="nav-count">0</span></button>
+      <button class="nav-item" data-page="watchlist"><span data-icon="bookmark"></span>My watchlist<span id="saved-count" class="nav-count">0</span></button>
+      <button class="nav-item" data-page="history"><span data-icon="clock"></span>Continue watching</button>
+    </nav>
+    <div class="nav-label second-label">MAKE IT YOURS</div>
+    <nav aria-label="Library navigation">
+      <button class="nav-item" data-page="library"><span data-icon="folder"></span>Your library</button>
+      <button class="nav-item" id="add-sidebar"><span data-icon="plus"></span>Add a film</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="cinema-note"><span class="tiny-star">✦</span><strong>A little less scrolling.<br>A little more cinema.</strong><p>Your films. Your kind of night.</p></div>
+      <button id="about-button" class="quiet-button"><span data-icon="info"></span>About & film credits</button>
+      <div class="local-label"><span></span> Your personal cinema</div>
+    </div>
+  </aside>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="breadcrumb">Your next great watch <span>starts here.</span></div>
+      <label class="search-box"><span data-icon="search"></span><input type="search" id="search" placeholder="Find your next film…" aria-label="Search films"><kbd>/</kbd></label>
+      <button id="account-button" class="account-button"><span data-icon="user"></span><span id="account-label">Sign in</span></button>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <img id="hero-image" class="hero-image" src="/assets/sintel.png" alt="Sintel, a young traveler in a fantastical world">
+        <div class="hero-shade"></div>
+        <div class="hero-content">
+          <div class="eyebrow"><span></span> TONIGHT’S SPOTLIGHT</div>
+          <p class="hero-kicker">A small film. An extraordinary journey.</p>
+          <h1 id="hero-title">SINTEL</h1>
+          <div class="film-meta"><span>2010</span><i></i><span>Fantasy</span><i></i><span id="hero-duration">15 min</span><span class="quality">OPEN FILM</span></div>
+          <p class="hero-description" id="hero-description">A chance encounter. An unlikely friendship. Follow a young traveler into a breathtaking world in search of a dragon she once called her own.</p>
+          <div class="hero-actions"><button class="primary-button" id="hero-play"><span data-icon="play"></span>Watch now</button><button class="secondary-button" id="hero-save"><span data-icon="plus"></span>My watchlist</button></div>
+          <div class="hero-credit">A Blender Foundation open movie <span>·</span> Free to explore</div>
+        </div>
+        <button class="hero-info" id="hero-info" aria-label="About Sintel"><span data-icon="info"></span></button>
+        <div class="hero-bottom"><span class="spotlight-label">THE OPEN CINEMA COLLECTION</span><span class="hero-line"></span><span>01 <span class="muted">/ 01</span></span></div>
+      </section>
+
+      <section class="browse-section" aria-labelledby="section-title">
+        <div class="section-heading"><div><div id="section-eyebrow" class="section-eyebrow">GOOD STORIES, NO SUBSCRIPTION</div><h2 id="section-title">Find your next favorite<span>.</span></h2></div><label class="sort-label"><span data-icon="sort"></span><select id="sort" aria-label="Sort films"><option value="featured">Featured first</option><option value="newest">Newest first</option><option value="title">Title A–Z</option><option value="shortest">Shortest first</option></select></label></div>
+        <div class="filter-row" id="filters" role="group" aria-label="Filter by genre"><button class="filter-chip active" data-genre="All">All films</button><button class="filter-chip" data-genre="Animation">Animation</button><button class="filter-chip" data-genre="Fantasy">Fantasy</button><button class="filter-chip" data-genre="Sci-Fi">Sci-Fi</button><button class="filter-chip" data-genre="Drama">Drama</button><button class="filter-chip" data-genre="Documentary">Documentary</button><button class="filter-chip" data-genre="Comedy">Comedy</button><button class="filter-chip" data-genre="Other">Other</button></div>
+        <p class="results-label" id="results-label" aria-live="polite">Loading your cinema…</p>
+        <div class="film-grid" id="film-grid"></div>
+        <div class="empty-state" id="empty-state" hidden><span data-icon="film"></span><h3 id="empty-title">Nothing here just yet</h3><p id="empty-description"></p><button class="secondary-button" id="empty-action">Explore films</button></div>
+      </section>
+
+      <section class="library-banner" id="library-banner"><div class="banner-icon"><span data-icon="folder"></span></div><div><span class="section-eyebrow">THE BEST COLLECTION IS YOURS</span><h3>Make room for your own stories.</h3><p>Add a video link or upload a film. Your library, all in one place.</p></div><button class="secondary-button" id="add-banner"><span data-icon="plus"></span>Add a film</button></section>
+      <footer><a href="#discover" class="footer-brand">movia<span>.</span></a><p>Made for the love of film.</p><button id="credits-footer">Open films. Proper credits. <span>↗</span></button></footer>
+    </main>
+  </div>
+
+  <dialog id="details-dialog" class="details-dialog"><button class="close-button" data-close aria-label="Close film details"><span data-icon="close"></span></button><div id="details-content"></div></dialog>
+  <dialog id="player-dialog" class="player-dialog"><div class="player-heading"><div><span class="section-eyebrow">NOW PLAYING</span><h2 id="player-title"></h2></div><button class="close-button" data-close aria-label="Close video player"><span data-icon="close"></span></button></div><video id="video" controls playsinline preload="metadata"></video><p id="player-error" class="form-error" role="alert" hidden></p><div class="player-footer"><span id="player-credit"></span><span id="progress-note">Sign in to save your progress.</span></div></dialog>
+  <dialog id="auth-dialog" class="form-dialog"><button class="close-button" data-close aria-label="Close sign in"><span data-icon="close"></span></button><span class="modal-brand">movia<span>.</span></span><h2 id="auth-title">Your seat is waiting.</h2><p class="dialog-intro" id="auth-description">Sign in to keep your watchlist and pick up where you left off.</p><form id="auth-form"><label>Username<input name="username" required minlength="3" maxlength="24" pattern="[A-Za-z0-9_]+" autocomplete="username" placeholder="Your username"></label><label>Password<input type="password" name="password" required minlength="8" maxlength="128" autocomplete="current-password" placeholder="At least 8 characters"></label><p class="form-error" id="auth-error" role="alert"></p><button type="submit" class="primary-button full-width" id="auth-submit">Sign in</button></form><button id="auth-switch" class="text-button">New here? Create a free account</button><p class="form-footnote">Your account stays on this computer. No email needed.</p></dialog>
+  <dialog id="account-dialog" class="form-dialog"><button class="close-button" data-close aria-label="Close account"><span data-icon="close"></span></button><span class="section-eyebrow">YOUR PERSONAL CINEMA</span><h2 id="account-name"></h2><p class="dialog-intro">Your watchlist, viewing progress, and uploaded films are saved on this computer.</p><button id="logout-button" class="secondary-button full-width">Sign out</button></dialog>
+  <dialog id="add-dialog" class="form-dialog add-dialog"><button class="close-button" data-close aria-label="Close add film"><span data-icon="close"></span></button><span class="section-eyebrow">GROW YOUR COLLECTION</span><h2>Add something worth watching.</h2><p class="dialog-intro">Bring a film into your personal library.</p><form id="add-form"><label>Film title<input name="title" required maxlength="120" placeholder="What’s it called?"></label><div class="form-row"><label>Year<input name="year" type="number" min="1888" max="2100" value="2026" required></label><label>Genre<select name="genre"><option>Animation</option><option>Fantasy</option><option>Sci-Fi</option><option>Drama</option><option>Documentary</option><option>Comedy</option><option>Other</option></select></label></div><div class="source-tabs" role="group" aria-label="Video source"><button type="button" data-source="url" class="active">Video link</button><button type="button" data-source="file">Upload a file</button></div><label id="url-field">Direct video URL<input name="video_url" type="url" placeholder="https://example.com/film.mp4" required><small>A direct HTTPS MP4 or WebM link, not a YouTube page.</small></label><label id="file-field" hidden>Video file<input name="video_file" type="file" accept="video/mp4,video/webm,video/ogg,.ogv"><small>MP4, WebM, or OGV · Up to 512 MB · Stored on this computer.</small></label><label>Poster image URL <span class="optional">optional</span><input name="image" type="url" placeholder="https://example.com/poster.jpg"></label><label>Description <span class="optional">optional</span><textarea name="description" maxlength="1500" rows="2" placeholder="Set the scene…"></textarea></label><label class="checkbox-label"><input type="checkbox" name="rights" required><span>I own this video or have permission to use it.</span></label><p class="form-error" id="add-error" role="alert"></p><progress id="upload-progress" value="0" max="100" hidden aria-label="Upload progress"></progress><button class="primary-button full-width" id="add-submit" type="submit">Add to my library</button></form></dialog>
+  <dialog id="about-dialog" class="form-dialog about-dialog"><button class="close-button" data-close aria-label="Close credits"><span data-icon="close"></span></button><span class="modal-brand">movia<span>.</span></span><h2>Your own little cinema.</h2><p class="dialog-intro">An independent, local film library inspired by the joy of discovering something great to watch.</p><div class="about-note"><h3>Free software. Your collection.</h3><p>Movia runs on your computer with Python and SQLite. No paid services or API keys are required. Streaming external videos uses your internet connection; uploaded videos play from your own disk.</p></div><h3>The open cinema collection</h3><p class="dialog-intro">Starter films and imagery belong to their credited creators. Availability of external streams can change.</p><div id="credits-list"></div><p class="form-footnote">Movia is an independent project and is not affiliated with MovieBox or Blender Foundation.</p></dialog>
+  <dialog id="confirm-dialog" class="form-dialog"><h2>Remove this film?</h2><p class="dialog-intro">This removes the film, any uploaded file, and its saved progress from your library.</p><div class="hero-actions"><button class="secondary-button" data-close>Keep film</button><button class="danger-button" id="confirm-delete">Remove film</button></div></dialog>
+  <div id="toast" class="toast" role="status" hidden></div>
+</body>
+</html>
